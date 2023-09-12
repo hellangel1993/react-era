@@ -1,11 +1,10 @@
-import CourseCard from './CourseCard';
-
-
+import React from "react";
+import CourseCard from "./CourseCard";
 
 function CourseCatalog() {
   return (
     <div className="course-catalog">
-      {courses.map(course => (
+      {courses.map((course) => (
         <CourseCard key={course.id} course={course} />
       ))}
     </div>
