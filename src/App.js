@@ -1,19 +1,28 @@
+// App.js
 import React from 'react';
-import './App.css';
-import NavBar from './Components/NavBar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
 import Banner from './Components/Banner';
-import Courses from './Components/Courses';
-
-
+import CourseCatalog from './Components/CourseCatalog';
+import Course from './Components/Course';
+import About from './Components/About';
+import Home from './Components/Home';
 
 function App() {
   return (
-    <>
-  <NavBar/>
-    <Banner/>
-    <Courses/>
-    </>
-  
+    <Router>
+      <div>
+        <Navbar />
+        <Banner />
+        <Routes>
+          <Route path="/" exact component={Home} />
+          <Route path="/courses" component={CourseCatalog} />
+          <Route path="/course/:id" component={Course} />
+          <Route path="/about" component={About} />
+       
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
